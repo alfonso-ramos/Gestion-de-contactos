@@ -29,6 +29,7 @@ int main() {
     }
 
     do {
+        system("cls");
         print("\nMenu:\n");
         print("1. Agregar Contacto\n");
         print("2. Mostrar Contactos\n");
@@ -37,6 +38,7 @@ int main() {
         print("Elige una opcion: ");
         scan("%d", &option);
 
+        system("cls");
         switch (option) {
             case 1:
                 addContact(contacts, &contactCount);
@@ -64,7 +66,6 @@ int login() {
 
     char correctUsername[] = "usuario";
     char correctPassword[] = "contrasena";
-
     print("Inicio de Sesion\n");
     print("Usuario: ");
     scan("%s", username);
@@ -84,7 +85,6 @@ void addContact(Contact contacts[], int *count) {
         print("La lista de contactos está llena.\n");
         return;
     }
-
     print("Agregar Contacto:\n");
     print("Nombre: ");
     scan("%s", contacts[*count].name);
