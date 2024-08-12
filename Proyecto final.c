@@ -29,7 +29,6 @@ int main() {
     }
 
     do {
-        system("cls");
         print("\nMenu:\n");
         print("1. Agregar Contacto\n");
         print("2. Mostrar Contactos\n");
@@ -38,7 +37,6 @@ int main() {
         print("Elige una opcion: ");
         scan("%d", &option);
 
-        system("cls");
         switch (option) {
             case 1:
                 addContact(contacts, &contactCount);
@@ -76,7 +74,7 @@ int login() {
         print("Acceso concedido.\n");
         return 1;
     }
-
+    system("clear");
     return 0;
 }
 
@@ -104,6 +102,7 @@ void addContact(Contact contacts[], int *count) {
 }
 
 void displayContacts(Contact contacts[], int count) {
+    system("clear");
     FILE *file = fopen(FILENAME, "r");
     if (file == NULL) {
         print("Error al abrir el archivo.\n");
@@ -117,10 +116,12 @@ void displayContacts(Contact contacts[], int count) {
     }
 
     fclose(file);
+    system("pause");
 }
 
 
 void searchContact(Contact contacts[], int count) {
+    system("clear");
     char searchName[MAX_NAME_LENGTH];
     print("Buscar Contacto\n");
     print("Nombre: ");
@@ -147,4 +148,5 @@ void searchContact(Contact contacts[], int count) {
     }
 
     fclose(file);
+    system("pause");
 }
