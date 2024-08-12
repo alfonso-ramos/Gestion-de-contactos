@@ -72,9 +72,9 @@ int login() {
 
     if (strcmp(username, correctUsername) == 0 && strcmp(password, correctPassword) == 0) {
         print("Acceso concedido.\n");
+    	system("cls");
         return 1;
     }
-    system("clear");
     return 0;
 }
 
@@ -94,15 +94,18 @@ void addContact(Contact contacts[], int *count) {
         fprintf(file, "%s %s\n", contacts[*count].name, contacts[*count].phone);
         fclose(file);
         print("Contacto agregado exitosamente.\n");
+        system("pause");
+        system("cls");
     } else {
         print("Error al abrir el archivo.\n");
+        system("pause");
     }
 
     (*count)++;
 }
 
 void displayContacts(Contact contacts[], int count) {
-    system("clear");
+    system("cls");
     FILE *file = fopen(FILENAME, "r");
     if (file == NULL) {
         print("Error al abrir el archivo.\n");
@@ -117,11 +120,12 @@ void displayContacts(Contact contacts[], int count) {
 
     fclose(file);
     system("pause");
+    system("cls");
 }
 
 
 void searchContact(Contact contacts[], int count) {
-    system("clear");
+    system("cls");
     char searchName[MAX_NAME_LENGTH];
     print("Buscar Contacto\n");
     print("Nombre: ");
@@ -149,4 +153,5 @@ void searchContact(Contact contacts[], int count) {
 
     fclose(file);
     system("pause");
+    system("cls");
 }
